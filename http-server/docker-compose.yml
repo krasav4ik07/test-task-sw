@@ -1,0 +1,16 @@
+version: '4.19'
+
+services:
+  app:
+    container_name: app_container
+    build: ./
+    command:
+      - ./http-server
+    ports:
+      - 8001:8001
+    networks:
+      - mynet
+
+networks:
+  mynet:
+    driver: bridge
